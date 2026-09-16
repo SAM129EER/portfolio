@@ -28,8 +28,7 @@ const Navbar = () => {
   return (
     <Container>
       <nav className="flex items-center justify-end p-2">
-       
-        <div className="flex items-center">
+        <div className="flex items-center gap-2 p-2">
           {navItems.map((item) => {
             return (
               <Link key={item.id} href={item.href}>
