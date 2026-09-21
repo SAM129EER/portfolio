@@ -1,5 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
+
 const Container = ({
   children,
   className,
@@ -10,7 +11,7 @@ const Container = ({
   return (
     <div
       className={cn(
-        "mx-auto w-full max-w-4xl bg-white dark:bg-neutral-900",
+        "mx-auto w-full max-w-4xl flex-1 bg-white dark:bg-neutral-900",
         className,
       )}
     >
