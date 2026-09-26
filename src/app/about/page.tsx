@@ -1,3 +1,7 @@
+"use client";
+
 export default function AboutPage() {
-  return <p>this is about page</p>;
+  return (
+    <h1>This is About Page here all things about is present </h1>
+  );
 }
