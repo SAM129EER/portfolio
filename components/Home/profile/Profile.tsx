@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { Copy } from "lucide-react"
 
-import { Container } from "@/components/container"
+import { Container } from "@/components/Common/container"
 import { Button } from "@/components/ui/button"
 import { SocialLinks } from "./SocialLinks"
 
