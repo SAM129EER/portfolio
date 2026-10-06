@@ -17,27 +17,27 @@ import {
 const socialLinks = [
   {
     name: "X",
-    href: "https://x.com/yourusername",
+    href: "https://x.com/jangidsameer77",
     icon: XIcon,
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/yourusername",
+    href: "https://www.linkedin.com/in/sameerjangid-5501753a0/",
     icon: LinkedInIcon,
   },
   {
     name: "GitHub",
-    href: "https://github.com/yourusername",
+    href: " https://github.com/SAM129EER",
     icon: GitHubIcon,
   },
   {
     name: "Medium",
-    href: "https://medium.com/@yourusername",
+    href: "https://medium.com/@jangidsameer77",
     icon: MediumIcon,
   },
   {
     name: "Email",
-    href: "mailto:you@example.com",
+    href: "mailto:jangidsameer77@gmail.com",
     icon: GmailIcon,
   },
 ];
