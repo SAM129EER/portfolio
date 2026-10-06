@@ -4,7 +4,8 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 import { Navbar } from "@/components/Common/navbar"
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { TooltipProvider } from "@/components/ui/tooltip"
+import OnekoCat from "@/components/OnekoCat"
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
 
 const fontMono = Geist_Mono({
@@ -31,9 +32,13 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <TooltipProvider>
-          <Navbar />
-          <main className={""}> {children}</main>
-         </TooltipProvider>
+            <Navbar />
+            <main className={""}>
+              {" "}
+              {children}
+              <OnekoCat />
+            </main>
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>
