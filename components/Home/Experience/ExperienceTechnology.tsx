@@ -8,45 +8,52 @@ type ExperienceTechnologyProps = {
   technology: Technology;
 };
 
+const textVariants = {
+  initial: {
+    opacity: 0,
+    width: 0,
+  },
+  hover: {
+    opacity: 1,
+    width: "auto",
+  },
+};
+
 export function ExperienceTechnology({
   technology,
 }: ExperienceTechnologyProps) {
   return (
     <motion.div
-      initial={{ width: 36 }}
-      whileHover={{ width: "auto" }}
-      transition={{
-        duration: 0.2,
-        ease: [0.22, 1, 0.36, 1],
-      }}
+      initial="initial"
+      whileHover="hover"
       className="
-        group relative z-0
+        relative z-0
         flex h-9
+        w-9
         items-center
         gap-2
         overflow-hidden
         rounded-md
         border border-dashed
         px-2
-        text-muted-foreground
+        text-foreground
         transition-colors
         hover:z-10
+        hover:w-auto
         hover:bg-muted
-        hover:text-foreground
       "
     >
-      {/* Icon will go here */}
+      {/* Icon */}
       <div className="size-4 shrink-0" />
 
       <motion.span
-        initial={{ opacity: 0 }}
-        whileHover={{ opacity: 1 }}
+        variants={textVariants}
         transition={{
-          duration: 0.15,
-          delay: 0.02,
+          duration: 0.2,
+          ease: [0.22, 1, 0.36, 1],
         }}
         className="
-          max-w-32
+          shrink-0
           overflow-hidden
           whitespace-nowrap
           text-xs
