@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "motion/react";
+
 import type { Technology } from "./experience-data";
 
 type ExperienceTechnologyProps = {
@@ -7,37 +11,50 @@ type ExperienceTechnologyProps = {
 export function ExperienceTechnology({
   technology,
 }: ExperienceTechnologyProps) {
-  const Icon = technology.icon;
-
   return (
-    <div
+    <motion.div
+      initial={{ width: 36 }}
+      whileHover={{ width: "auto" }}
+      transition={{
+        duration: 0.2,
+        ease: [0.22, 1, 0.36, 1],
+      }}
       className="
-        group relative flex h-9 min-w-9
-        items-center justify-center gap-2
-        overflow-hidden rounded-md
+        group relative z-0
+        flex h-9
+        items-center
+        gap-2
+        overflow-hidden
+        rounded-md
         border border-dashed
         px-2
         text-muted-foreground
-        transition-all duration-200
-        hover:min-w-fit
+        transition-colors
+        hover:z-10
         hover:bg-muted
         hover:text-foreground
       "
     >
-      <Icon className="size-4 shrink-0" />
+      {/* Icon will go here */}
+      <div className="size-4 shrink-0" />
 
-      <span
+      <motion.span
+        initial={{ opacity: 0 }}
+        whileHover={{ opacity: 1 }}
+        transition={{
+          duration: 0.15,
+          delay: 0.02,
+        }}
         className="
-          max-w-0 overflow-hidden whitespace-nowrap
-          text-xs font-medium
-          opacity-0
-          transition-all duration-200
-          group-hover:max-w-24
-          group-hover:opacity-100
+          max-w-32
+          overflow-hidden
+          whitespace-nowrap
+          text-xs
+          font-medium
         "
       >
         {technology.name}
-      </span>
-    </div>
+      </motion.span>
+    </motion.div>
   );
 }
