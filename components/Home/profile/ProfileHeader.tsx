@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Copy } from "lucide-react"
+import { Copy, MapPin } from "lucide-react"
 
 export function ProfileHeader() {
   return (
@@ -8,7 +8,7 @@ export function ProfileHeader() {
       {/* Profile Header */}
       <div className="flex items-center gap-4">
         {/* Profile Image */}
-        <div className="relative size-20 shrink-0 overflow-hidden rounded-full">
+        <div className="relative size-24 shrink-0 overflow-hidden rounded-full">
           <Image
             src="/profileLight.jpg"
             alt="Profile picture"
@@ -33,6 +33,15 @@ export function ProfileHeader() {
               <Copy />
             </Button>
           </p>
+          <div className="flex items-center gap-2">
+            <p className="flex items-center gap-1 text-sm text-muted-foreground">
+              <MapPin size={14} />
+              India
+            </p>
+            <p className="flex items-center text-sm text-muted-foreground">
+              Time
+            </p>
+          </div>
         </div>
       </div>
     </>

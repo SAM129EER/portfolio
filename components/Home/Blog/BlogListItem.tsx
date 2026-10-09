@@ -10,20 +10,20 @@ type BlogListItemProps = {
 export function BlogListItem({ blog }: BlogListItemProps) {
   return (
     <article className="flex items-center justify-between gap-6">
-      <div className="min-w-0">
-        <Link href={`/blog/${blog.slug}`} className="group">
+      <Link href={`/blog/${blog.slug}`} className="group">
+        <div className="min-w-0">
           <h3 className="font-semibold tracking-tight transition-colors group-hover:text-muted-foreground">
             {blog.title}
           </h3>
-        </Link>
 
-        <p className="text-sm text-muted-foreground">{blog.description}</p>
+          <p className="text-sm text-muted-foreground">{blog.description}</p>
 
-        <div className="mt-1 flex items-center gap-2 text-sm text-muted-foreground">
-          <CalendarDays className="size-3" />
-          <time>{blog.date}</time>
+          <div className="mt-1 flex items-center gap-2 text-sm text-muted-foreground">
+            <CalendarDays className="size-3" />
+            <time>{blog.date}</time>
+          </div>
         </div>
-      </div>
+      </Link>
 
       <Link
         href={`/blog/${blog.slug}`}
