@@ -1,6 +1,7 @@
 import { Container } from "@/components/Common/container"
 import Blog from "@/components/Home/Blog/Blog";
 import Experience from "@/components/Home/Experience/Experience";
+import Personal from "@/components/Home/Personal/Personal";
 import { Profile } from "@/components/Home/profile/Profile";
 export default function Page() {
   return (
@@ -9,6 +10,7 @@ export default function Page() {
         <Profile />
         <Experience/>
         <Blog/>
+        <Personal/>
       </div>
     </Container>
   )

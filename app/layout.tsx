@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils"
 import { Navbar } from "@/components/Common/navbar"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import OnekoCat from "@/components/OnekoCat"
+import { Footer } from "@/components/Common/footer"
 
 export default function RootLayout({
   children,
@@ -17,10 +18,14 @@ export default function RootLayout({
           <TooltipProvider>
             <Navbar />
             <main className={""}>
-            
               {children}
               <OnekoCat />
             </main>
+            <Footer />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none fixed inset-x-0 bottom-0 z-50 h-10 border-t border-border/20 bg-background/25 [mask-image:linear-gradient(to_bottom,transparent,black_35%)] backdrop-blur-xl"
+            />
           </TooltipProvider>
         </ThemeProvider>
       </body>
