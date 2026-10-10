@@ -11,10 +11,14 @@ import { ExperienceTechnology } from "./ExperienceTechnology"
 
 type ExperienceItemProps = {
   experience: Experience
+  defaultOpen?: boolean
 }
 
-export function ExperienceItem({ experience }: ExperienceItemProps) {
-  const [open, setOpen] = useState(false)
+export function ExperienceItem({
+  experience,
+  defaultOpen = false,
+}: ExperienceItemProps) {
+  const [open, setOpen] = useState(defaultOpen)
 
   return (
     <article className="group/card">
@@ -26,8 +30,8 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
             <h3 className="font-semibold">{experience.company}</h3>
 
             {experience.working && (
-              <span className="inline-flex items-center gap-1.5 rounded-md bg-green-500/10 px-2 py-1 text-xs font-medium text-foreground dark:text-foreground">
-                <span className="size-1.5 rounded-full bg-green-400 animate-pulse" />
+              <span className="inline-flex items-center gap-1.5 rounded-md border border-green-600 bg-green-500/10 px-2 py-1 text-xs font-medium text-foreground dark:text-foreground">
+                <span className="size-1.5 rounded-full  bg-green-400 animate-pulse" />
                 Working
               </span>
             )}
