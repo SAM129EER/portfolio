@@ -69,7 +69,7 @@ export function ProfileHeader() {
               className="size-5 hover:bg-muted"
             >
               {copied ? (
-                <Check className="size-3 text-green-500 transition-transform scale-110" />
+                <Check className="size-3 scale-110 text-green-500 transition-transform" />
               ) : (
                 <Copy className="size-3" />
               )}
@@ -77,16 +77,16 @@ export function ProfileHeader() {
           </span>
         </div>
 
-        <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-jetbrains">
+        <div className="font-jetbrains flex items-center gap-1.5 text-xs text-muted-foreground">
           <div className="flex items-center gap-1">
-            <MapPin className="size-3.5 text-muted-foreground shrink-0" />
+            <MapPin className="size-3.5 shrink-0 text-muted-foreground" />
             <span>India</span>
           </div>
 
           <span className="text-muted-foreground/40">•</span>
 
           <div className="flex items-center gap-1">
-            <Clock className="size-3.5 text-muted-foreground animate-pulse shrink-0" />
+            <Clock className="size-3.5 shrink-0 animate-pulse text-muted-foreground" />
             <span>{time || "Loading..."}</span>
           </div>
         </div>

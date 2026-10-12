@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 
 import type { Experience } from "./experience-data"
 import { ExperienceTechnology } from "./ExperienceTechnology"
+import { Separator } from "@/components/ui/separator"
 
 
 type ExperienceItemProps = {
@@ -67,7 +68,6 @@ export function ExperienceItem({
           <p>{experience.location}</p>
         </div>
       </div>
-
       {/* Details */}
       {open && (
         <div className="mt-4 border-t pt-4">
@@ -97,6 +97,7 @@ export function ExperienceItem({
               </ul>
             </div>
           </div>
+          <Separator className={"mt-4"}/>
         </div>
       )}
     </article>

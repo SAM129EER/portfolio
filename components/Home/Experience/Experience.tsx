@@ -19,7 +19,7 @@ export default function Experience() {
           ))}
         </div>
 
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center mt-4">
           <Button variant="outline" className={"p-2"}>
             <Link href="/work" >Show all work experiences</Link>
           </Button>

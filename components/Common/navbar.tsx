@@ -16,7 +16,7 @@ const navItems = [
   },
   {
     label:"Project",
-    href:"/project"
+    href:"/projects"
   },
   {
     label: "Blog",
@@ -49,9 +49,9 @@ export function Navbar() {
             <Button
               variant="outline"
               size="lg"
-              className="gap-2 rounded-full px-2"
+              className="gap-2 rounded-full px-2 "
             >
-              <Search className="size-3" />
+              <Search className="size-4" />
 
               <kbd className="pointer-events-none rounded border bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground">
                 Ctrl
