@@ -3,27 +3,28 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import React from "react"
 import { blogData } from "./blog-data"
-import { BlogListItem } from "./BlogListItem"
+import { BlogCard } from "@/components/Blog/BlogCard"
 
-const Blog = () => {
+export default function Blog() {
   return (
     <Container>
-      <section className="">
-        <h1 className="pb-4 text-xl font-semibold tracking-tight">Blog</h1>
+      <section className="space-y-3">
+        <h2 className="text-xl font-semibold tracking-tight">Blog</h2>
 
-        <div className="space-y-6 pb-4">
+        <div className="divide-y divide-border/30 space-y-2">
           {blogData.slice(0, 3).map((blog) => (
-            <BlogListItem key={blog.id} blog={blog} />
+            <div key={blog.id} className="pt-2 first:pt-0">
+              <BlogCard blog={blog} />
+            </div>
           ))}
         </div>
-        <div className="flex items-center justify-center pb-4">
-          <Button variant="outline" className={"p-2"}>
-            <Link href="/work">Show all blogs</Link>
+
+        <div className="flex items-center justify-center pt-2">
+          <Button variant="outline" className="p-2">
+            <Link href="/blog">Show all blogs</Link>
           </Button>
         </div>
       </section>
     </Container>
   )
 }
-
-export default Blog
