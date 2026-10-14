@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "motion/react"
-
+import { TechIcon } from "@/components/icons"
 import type { Technology } from "./experience-data"
 
 type ExperienceTechnologyProps = {
@@ -29,7 +29,7 @@ export function ExperienceTechnology({
       className="relative z-0 flex h-9 w-9 items-center gap-2 overflow-hidden rounded-md border border-dashed px-2 text-foreground transition-colors hover:z-10 hover:w-auto hover:bg-muted"
     >
       {/* Icon */}
-      <div className="size-4 shrink-0" />
+      <TechIcon name={technology.name} className="size-4 shrink-0" />
 
       <motion.span
         variants={textVariants}
