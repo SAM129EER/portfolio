@@ -147,7 +147,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1.5 rounded-xl bg-foreground/5 dark:bg-white/5 hover:bg-foreground/10 dark:hover:bg-white/10 py-2 text-xs font-medium text-foreground transition-all active:scale-95 shadow-xs"
+              className="flex items-center justify-center gap-1.5 rounded-md bg-foreground/5 dark:bg-white/5 hover:bg-foreground/10 dark:hover:bg-white/10 py-2 text-xs font-medium text-foreground transition-all active:scale-95 shadow-xs"
             >
               <GitHubIcon className="size-3.5" />
               <span>GitHub</span>
@@ -159,7 +159,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1.5 rounded-xl bg-foreground text-background hover:opacity-90 py-2 text-xs font-medium transition-all active:scale-95 shadow-xs"
+              className="flex items-center justify-center gap-1.5 rounded-md bg-foreground text-background hover:opacity-90 py-2 text-xs font-medium transition-all active:scale-95 shadow-xs"
             >
               <ExternalLink className="size-3.5" />
               <span>Live Demo</span>

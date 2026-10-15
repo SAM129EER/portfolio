@@ -4,9 +4,9 @@ import { BlogList } from "@/components/Blog/BlogList"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Blog | Sameer Jangid",
+  title: "Blog",
   description:
-    "Thoughts, engineering deep dives, and reflections on building software.",
+    "Thoughts, technical deep dives, and practical insights into engineering, architecture, and developer tools.",
 }
 
 export default function BlogPage() {

@@ -1,6 +1,13 @@
 import { Container } from "@/components/Common/container"
 import { experienceData } from "@/components/Home/Experience/experience-data"
 import { ExperienceItem } from "@/components/Home/Experience/ExperienceItem"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Work Experience",
+  description:
+    "A detailed timeline of software engineering roles, technical responsibilities, and accomplishments at TechFlow, Nexora, and Vertex Labs.",
+}
 
 export default function WorkPage() {
   return (

@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import "./globals.css"
 import "lenis/dist/lenis.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -8,6 +9,55 @@ import OnekoCat from "@/components/OnekoCat"
 import { Footer } from "@/components/Common/footer"
 import { Quote } from "@/components/Home/Personal/Quote"
 import { SmoothScroll } from "@/components/Common/smooth-scroll"
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://sameerjangid.dev"),
+  title: {
+    default: "Sameer Jangid | Full Stack Developer & Engineer",
+    template: "%s | Sameer Jangid",
+  },
+  description:
+    "Portfolio of Sameer Jangid, a Full Stack Developer and Software Engineer building high-performance web applications, interactive interfaces, and developer tooling.",
+  keywords: [
+    "Sameer Jangid",
+    "Full Stack Developer",
+    "Software Engineer",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Node.js",
+    "Portfolio",
+  ],
+  authors: [{ name: "Sameer Jangid", url: "https://github.com/SAM129EER" }],
+  creator: "Sameer Jangid",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://sameerjangid.dev",
+    title: "Sameer Jangid | Full Stack Developer & Engineer",
+    description:
+      "Full Stack Developer building scalable, beautiful web applications with Next.js, React, and TypeScript.",
+    siteName: "Sameer Jangid Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sameer Jangid | Full Stack Developer & Engineer",
+    description:
+      "Full Stack Developer building scalable, beautiful web applications with Next.js, React, and TypeScript.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+}
 
 export default function RootLayout({
   children,

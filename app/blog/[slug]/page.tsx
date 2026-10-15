@@ -26,8 +26,21 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${blog.title} | Blog`,
+    title: blog.title,
     description: blog.description,
+    openGraph: {
+      title: blog.title,
+      description: blog.description,
+      type: "article",
+      publishedTime: blog.date,
+      authors: ["Sameer Jangid"],
+      tags: blog.tags,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: blog.title,
+      description: blog.description,
+    },
   }
 }
 

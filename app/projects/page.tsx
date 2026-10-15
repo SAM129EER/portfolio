@@ -4,8 +4,9 @@ import { ProjectList } from "@/components/Projects/ProjectList"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Projects | Sameer Jangid",
-  description: "A showcase of engineering projects, developer tools, and web applications.",
+  title: "Projects",
+  description:
+    "A showcase of full-stack web applications, interactive interfaces, developer tools, and open-source projects.",
 }
 
 export default function ProjectsPage() {
