@@ -15,8 +15,8 @@ const navItems = [
     href: "/work",
   },
   {
-    label:"Project",
-    href:"/projects"
+    label: "Projects",
+    href: "/projects",
   },
   {
     label: "Blog",
