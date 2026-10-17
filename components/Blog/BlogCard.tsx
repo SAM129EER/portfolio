@@ -8,10 +8,10 @@ type BlogCardProps = {
 
 export function BlogCard({ blog }: BlogCardProps) {
   return (
-    <article className="group relative rounded-xl border border-transparent p-4 -mx-4 transition-colors hover:border-border/40 hover:bg-muted/40">
+    <article className="group relative -mx-4 rounded-xl border border-transparent p-4 transition-colors hover:border-border/40 hover:bg-muted/40">
       {/* Top Metadata */}
-      <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground mb-2">
-        <div className="flex items-center gap-2 font-jetbrains">
+      <div className="mb-2 flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
+        <div className="font-jetbrains flex items-center gap-2">
           <time dateTime={blog.date}>{blog.date}</time>
           {blog.readingTime && (
             <>
