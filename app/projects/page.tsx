@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <Container>
-      <div className="flex flex-col space-y-8 pt-8 px-4 pb-12">
+      <div className="flex flex-col space-y-8 pt-8 px-4 pb-10">
         {/* Page Header */}
         <header className="space-y-2">
           <h1 className="text-2xl font-bold tracking-tight">Projects</h1>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            A showcase of web applications, developer tooling, and interactive systems. Hover on any card to preview the project video.
+            A showcase of web applications, developer tooling, and interactive systems.
           </p>
         </header>
 

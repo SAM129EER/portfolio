@@ -73,7 +73,7 @@ export function ProjectList({ projects }: ProjectListProps) {
                 key={cat}
                 type="button"
                 onClick={() => setSelectedCategory(cat)}
-                className={`rounded-full px-3 py-1 text-xs font-medium transition-all ${
+                className={`rounded-md px-3 py-1.5 text-xs font-medium transition-all cursor-pointer ${
                   isActive
                     ? "bg-foreground text-background shadow-xs"
                     : "border border-border/60 bg-muted/30 text-muted-foreground hover:bg-muted hover:text-foreground"
@@ -86,7 +86,7 @@ export function ProjectList({ projects }: ProjectListProps) {
         </div>
       </div>
 
-      {/* Counter & Status Line */}
+      {/* Counter & Status Line
       <div className="flex items-center justify-between border-b border-border/40 pb-2 text-xs text-muted-foreground font-jetbrains">
         <span>
           {filteredProjects.length === projects.length
@@ -102,9 +102,10 @@ export function ProjectList({ projects }: ProjectListProps) {
             Reset filters
           </button>
         )}
-      </div>
+      </div> */}
 
       {/* Projects Grid (YouTube-style tight spacing) */}
+      
       {filteredProjects.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-7 sm:gap-x-5 sm:gap-y-8 pt-1">
           {filteredProjects.map((project) => (

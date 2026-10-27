@@ -87,15 +87,15 @@ export function ProjectCard({ project }: ProjectCardProps) {
           />
         )}
 
-        {/* Top-Left Category Tag */}
+        {/* Top-Left Category Tag
         {project.categoryTag && (
           <div className="absolute top-2 left-2 z-10 flex items-center gap-1.5 rounded-md bg-black/75 px-2 py-0.5 text-[10px] sm:text-[11px] font-medium text-white backdrop-blur-md border border-white/10 shadow-xs">
             <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
             <span>{project.categoryTag}</span>
           </div>
-        )}
+        )} */}
 
-        {/* Bottom-Right Duration Badge (YouTube Style) */}
+        {/* Bottom-Right Duration Badge (YouTube Style)
         <div className="absolute bottom-2 right-2 z-10 flex items-center gap-1 rounded bg-black/85 px-1.5 py-0.5 font-jetbrains text-[10px] sm:text-[11px] font-medium text-white backdrop-blur-xs">
           {isHovered && project.videoUrl ? (
             <span className="flex items-center gap-1 text-emerald-400">
@@ -105,7 +105,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           ) : (
             <span>{project.durationBadge || "Demo"}</span>
           )}
-        </div>
+        </div> */}
       </div>
 
       {/* 2. Middle Row: Title of project on Left, Logos of tech used on Right */}
@@ -118,7 +118,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </h3>
 
             {/* Logos of tech used */}
-            <div className="flex items-center gap-1 shrink-0 pt-0.5">
+            {/* <div className="flex items-center gap-1 shrink-0 pt-0.5">
               {project.techStack.map((tech) => (
                 <div
                   key={tech}
@@ -128,7 +128,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                   <TechIcon name={tech} className="size-3.5" />
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Description */}
