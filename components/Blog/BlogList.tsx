@@ -85,7 +85,7 @@ export function BlogList({ blogs }: BlogListProps) {
                 key={tag}
                 type="button"
                 onClick={() => setSelectedTag(tag)}
-                className={`rounded-full px-3 py-1 text-xs font-medium transition-all ${
+                className={`rounded-md px-3 py-1.5 text-xs font-medium transition-all ${
                   isActive
                     ? "bg-foreground text-background shadow-sm"
                     : "border border-border/60 bg-muted/30 text-muted-foreground hover:bg-muted hover:text-foreground"
