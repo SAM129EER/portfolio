@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState, useSyncExternalStore } from "react"
 
 const quotes = [
   {
@@ -24,15 +24,13 @@ const quotes = [
   },
 ]
 
+const emptySubscribe = () => () => {}
+
 export function Quote() {
-  const [quoteIndex, setQuoteIndex] = useState(0)
+  const isClient = useSyncExternalStore(emptySubscribe, () => true, () => false)
+  const [quoteIndex] = useState(() => Math.floor(Math.random() * quotes.length))
 
-  useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * quotes.length)
-    setQuoteIndex(randomIndex)
-  }, [])
-
-  const quote = quotes[quoteIndex]
+  const quote = quotes[isClient ? quoteIndex : 0]
 
   return (
     <figure className="relative overflow-hidden rounded-xl border p-6">

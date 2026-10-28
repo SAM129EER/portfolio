@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import "./globals.css"
-import "lenis/dist/lenis.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Navbar } from "@/components/Common/navbar"
 import { Container } from "@/components/Common/container"

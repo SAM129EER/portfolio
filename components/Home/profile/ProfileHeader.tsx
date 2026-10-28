@@ -4,10 +4,13 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Check, Clock, Copy, MapPin } from "lucide-react"
+import { Skeleton } from "@/components/ui/skeleton"
+import { cn } from "@/lib/utils"
 
 export function ProfileHeader() {
   const [time, setTime] = useState<string>("")
   const [copied, setCopied] = useState<boolean>(false)
+  const [avatarLoaded, setAvatarLoaded] = useState<boolean>(false)
 
   useEffect(() => {
     const updateTime = () => {
@@ -39,13 +42,20 @@ export function ProfileHeader() {
 
   return (
     <div className="flex items-center gap-4">
-      {/* Profile Image */}
-      <div className="relative size-24 shrink-0 overflow-hidden rounded-full border border-border/40 shadow-sm">
+      {/* Profile Image with Skeleton Loader */}
+      <div className="relative size-24 shrink-0 overflow-hidden rounded-full border border-border/40 bg-muted shadow-xs">
+        {!avatarLoaded && (
+          <Skeleton className="absolute inset-0 size-full rounded-full" />
+        )}
         <Image
-          src="/profileLight.jpg"
+          src="/avatar/avatar-1.jpg"
           alt="Sameer Jangid profile picture"
           fill
-          className="object-cover"
+          onLoad={() => setAvatarLoaded(true)}
+          className={cn(
+            "object-cover transition-opacity duration-300",
+            avatarLoaded ? "opacity-100" : "opacity-0"
+          )}
           priority
         />
       </div>

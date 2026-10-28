@@ -1,18 +1,16 @@
 "use client"
+
 import Script from "next/script"
-import React from "react"
-import { useEffect, useState } from "react"
-const onekos = ["/oneko/oneko-dog.gif", "/oneko/oneko.gif" , "/oneko/oneko-samy.gif"]
+import { useState, useSyncExternalStore } from "react"
+
+const onekos = ["/oneko/oneko-dog.gif", "/oneko/oneko.gif", "/oneko/oneko-samy.gif"]
+const emptySubscribe = () => () => {}
 
 export default function OnekoCat() {
-  const [randomOneko , setRandomOneko] = useState<string | null>(null)
+  const isClient = useSyncExternalStore(emptySubscribe, () => true, () => false)
+  const [randomOneko] = useState(() => onekos[Math.floor(Math.random() * onekos.length)])
 
-  useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * onekos.length);
-    setRandomOneko(onekos[randomIndex]);
-  }, []);
-
-  if (!randomOneko) return null;
+  if (!isClient || !randomOneko) return null
 
   return <Script src="/oneko/oneko.js" data-cat={randomOneko} strategy="lazyOnload" />
 }

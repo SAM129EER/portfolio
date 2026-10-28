@@ -1,8 +1,10 @@
-import Link from "next/link"
-import { Search } from "lucide-react"
+"use client"
 
+import Link from "next/link"
+import { useRouter } from "next/navigation"
+import { useEffect } from "react"
+import { Search } from "lucide-react"
 import { Container } from "@/components/Common/container"
-import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 const navItems = [
@@ -29,8 +31,21 @@ const navItems = [
 ]
 
 export function Navbar() {
+  const router = useRouter()
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault()
+        router.push("/projects")
+      }
+    }
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [router])
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 py-3">
+    <header className="sticky top-0 z-50 w-full bg-background/95 py-3 backdrop-blur supports-backdrop-filter:bg-background/60">
       <Container>
         <nav className="flex items-center justify-between px-4">
           <div className="flex items-center gap-6">
@@ -46,21 +61,19 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-2">
-            <Button
-              variant="outline"
-              size="lg"
-              className="gap-2 rounded-full px-2 "
+            <Link
+              href="/projects"
+              aria-label="Search projects (Ctrl+K)"
+              className="inline-flex h-8 items-center gap-2 rounded-full border border-border bg-background px-2.5 text-xs text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
-              <Search className="size-4" />
-
-              <kbd className="pointer-events-none rounded border bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground">
+              <Search className="size-3.5" />
+              <kbd className="pointer-events-none rounded border border-border/80 bg-muted/60 px-1 py-0.5 text-[10px] font-medium text-muted-foreground">
                 Ctrl
               </kbd>
-
-              <kbd className="pointer-events-none rounded border bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground">
+              <kbd className="pointer-events-none rounded border border-border/80 bg-muted/60 px-1 py-0.5 text-[10px] font-medium text-muted-foreground">
                 K
               </kbd>
-            </Button>
+            </Link>
 
             <ThemeToggle />
           </div>

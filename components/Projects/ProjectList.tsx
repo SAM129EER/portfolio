@@ -40,7 +40,7 @@ export function ProjectList({ projects }: ProjectListProps) {
 
   return (
     <div className="space-y-6">
-      {/* Search & Category Filter Header (YouTube Chips Bar Style) */}
+      {/* Search & Category Filter Header */}
       <div className="space-y-3">
         {/* Search Bar */}
         <div className="relative">
@@ -73,7 +73,7 @@ export function ProjectList({ projects }: ProjectListProps) {
                 key={cat}
                 type="button"
                 onClick={() => setSelectedCategory(cat)}
-                className={`rounded-md px-3 py-1.5 text-xs font-medium transition-all cursor-pointer ${
+                className={`cursor-pointer rounded-md px-3 py-1.5 text-xs font-medium transition-all ${
                   isActive
                     ? "bg-foreground text-background shadow-xs"
                     : "border border-border/60 bg-muted/30 text-muted-foreground hover:bg-muted hover:text-foreground"
@@ -86,8 +86,8 @@ export function ProjectList({ projects }: ProjectListProps) {
         </div>
       </div>
 
-      {/* Counter & Status Line
-      <div className="flex items-center justify-between border-b border-border/40 pb-2 text-xs text-muted-foreground font-jetbrains">
+      {/* Results Header */}
+      <div className="flex items-center justify-between border-b border-border/40 pb-2 font-jetbrains text-xs text-muted-foreground">
         <span>
           {filteredProjects.length === projects.length
             ? `All Projects (${projects.length})`
@@ -97,17 +97,16 @@ export function ProjectList({ projects }: ProjectListProps) {
           <button
             type="button"
             onClick={handleReset}
-            className="underline underline-offset-2 hover:text-foreground transition-colors"
+            className="underline underline-offset-2 transition-colors hover:text-foreground"
           >
             Reset filters
           </button>
         )}
-      </div> */}
+      </div>
 
-      {/* Projects Grid (YouTube-style tight spacing) */}
-      
+      {/* Projects Grid */}
       {filteredProjects.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-7 sm:gap-x-5 sm:gap-y-8 pt-1">
+        <div className="grid grid-cols-1 gap-x-4 gap-y-7 pt-1 sm:grid-cols-2 sm:gap-x-5 sm:gap-y-8">
           {filteredProjects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
@@ -115,7 +114,7 @@ export function ProjectList({ projects }: ProjectListProps) {
       ) : (
         /* Empty State */
         <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-border/60 p-12 text-center">
-          <div className="flex size-12 items-center justify-center rounded-full bg-muted text-muted-foreground mb-4">
+          <div className="mb-4 flex size-12 items-center justify-center rounded-full bg-muted text-muted-foreground">
             <FolderGit2 className="size-6" />
           </div>
           <h3 className="text-base font-semibold text-foreground">

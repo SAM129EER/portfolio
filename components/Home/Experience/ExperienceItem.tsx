@@ -46,7 +46,7 @@ export function ExperienceItem({
                   ? `Collapse ${experience.company}`
                   : `Expand ${experience.company}`
               }
-              className="relative flex size-5 items-center justify-center rounded-md bg-muted opacity-0 transition-colors group-hover/card:opacity-100 hover:bg-muted/80"
+              className="relative flex size-5 items-center justify-center rounded-md bg-muted text-muted-foreground opacity-70 transition-all sm:opacity-0 group-hover/card:opacity-100 hover:bg-muted/80 hover:text-foreground"
             >
               <ChevronDown
                 className={cn(
@@ -88,7 +88,7 @@ export function ExperienceItem({
 
             {/* Achievements */}
             <div>
-              <h4 className="mb-2 font-semibold">What I've done</h4>
+              <h4 className="mb-2 font-semibold">What I&apos;ve done</h4>
 
               <ul className="list-disc space-y-1 pl-5 text-sm leading-6 text-muted-foreground">
                 {experience.achievements.map((achievement) => (
