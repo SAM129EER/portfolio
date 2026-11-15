@@ -71,9 +71,7 @@ export default function RootLayout({
             <SmoothScroll>
               <div className="flex min-h-screen flex-col">
                 <Navbar />
-                <main className="flex-1">
-                  {children}
-                </main>
+                <main className="flex-1">{children}</main>
                 <Container className="px-4 py-8">
                   <Quote />
                 </Container>

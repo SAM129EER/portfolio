@@ -34,7 +34,7 @@ export function ExperienceTechnology({
       <motion.span
         variants={textVariants}
         transition={{
-          duration: 0.3,
+          duration: 0.5,
           ease: [0.22, 1, 0.36, 1],
         }}
         className="shrink-0 overflow-hidden text-xs font-medium whitespace-nowrap"

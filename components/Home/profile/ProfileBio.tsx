@@ -4,10 +4,15 @@ const featuredTech = [
   "Next.js",
   "React",
   "TypeScript",
-  "Node.js",
+  "JavaScript",
   "Tailwind CSS",
+  "Shadcn/ui",
+  "Python",
+  "Node.js",
   "PostgreSQL",
+  "MongoDB",
   "Docker",
+  "Prisma",
   "Git",
 ]
 
@@ -25,10 +30,10 @@ export function ProfileBio() {
         {featuredTech.map((tech) => (
           <span
             key={tech}
-            className="inline-flex items-center gap-1.5 rounded-md border border-border/40 bg-muted/30 px-2 py-0.5 text-xs font-medium text-muted-foreground font-jetbrains transition-colors hover:bg-muted hover:text-foreground"
+            className="inline-flex items-center gap-1.5 rounded-md border border-dashed border-border/40 bg-muted/30 px-2 py-1.5 text-xs font-medium text-muted-foreground font-jetbrains transition-colors hover:bg-muted hover:text-foreground"
           >
             <TechIcon name={tech} className="size-3.5" />
-            <span>{tech}</span>
+            <span className="font-bold ">{tech}</span>
           </span>
         ))}
       </div>
