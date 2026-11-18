@@ -56,7 +56,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="mt-16 pb-6 border-t bg-card">
+    <footer className="mt-14 border-t border-border/60 bg-card/50 pb-8 pt-2 backdrop-blur-xs">
       <Container>
         <div className="space-y-6  pt-6">
           <div className="grid grid-cols-2 gap-8">
@@ -111,7 +111,7 @@ export function Footer() {
                             ? "noopener noreferrer"
                             : undefined
                         }
-                        className="text-muted-foreground transition-colors hover:text-foreground"
+                        className="flex size-8 items-center justify-center rounded-lg border border-border/70 bg-card text-muted-foreground shadow-2xs transition-all hover:bg-muted hover:border-foreground/25 hover:text-foreground active:scale-95 dark:border-border/50 dark:bg-muted/20"
                       >
                         <Icon className="size-4" />
                       </Link>

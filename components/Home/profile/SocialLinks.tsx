@@ -57,7 +57,7 @@ export function SocialLinks() {
                 rel={
                   social.name === "Email" ? undefined : "noopener noreferrer"
                 }
-                className="relative flex size-9 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                className="relative flex size-9 items-center justify-center rounded-lg border border-border/70 bg-card text-muted-foreground shadow-2xs transition-all hover:bg-muted hover:border-foreground/25 hover:text-foreground active:scale-95 dark:border-border/50 dark:bg-muted/20 dark:hover:bg-muted"
                 aria-label={social.name}
               >
                 <Icon className="size-5" />

@@ -40,24 +40,33 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <article
-      className="group relative -m-2.5 flex cursor-pointer flex-col rounded-2xl p-2.5 transition-all duration-500 ease-out sm:-m-3 sm:p-3"
+      className="group relative -m-2.5 flex cursor-pointer flex-col rounded-2xl p-2.5 transition-all duration-300 ease-out sm:-m-3 sm:p-3"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Background that emerges smoothly on hover */}
+      {/* Background that emerges smoothly on hover:
+          Light mode gets a soft tinted pastel with border & shadow lift.
+          Dark mode gets the rich deep ambient tone with white border glow. */}
       <div
         aria-hidden="true"
         className={cn(
-          "pointer-events-none absolute inset-0 -z-10 rounded-2xl transition-all duration-500 ease-out",
-          isHovered ? "scale-100 opacity-100" : "scale-95 opacity-0"
+          "pointer-events-none absolute inset-0 -z-10 rounded-2xl border transition-all duration-300 ease-out",
+          isHovered
+            ? "scale-100 opacity-100 shadow-md border-border/80 dark:border-white/10 dark:shadow-2xl"
+            : "scale-95 opacity-0 border-transparent shadow-none"
         )}
-        style={{
-          backgroundColor: project.accentBg,
-        }}
-      />
+        style={
+          {
+            "--accent-light": project.accentBgLight,
+            "--accent-dark": project.accentBg,
+          } as React.CSSProperties
+        }
+      >
+        <div className="size-full rounded-2xl bg-[var(--accent-light)] dark:bg-[var(--accent-dark)]" />
+      </div>
 
       {/* 1. Image / Video on hover (16:9 Thumbnail) */}
-      <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-muted/80 shadow-xs">
+      <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-border/50 bg-muted/80 shadow-xs dark:border-white/5">
         {/* Loading skeleton placeholder */}
         {!imageLoaded && (
           <Skeleton className="absolute inset-0 size-full rounded-xl" />
@@ -104,14 +113,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </h3>
 
             {project.techStack && project.techStack.length > 0 && (
-              <div className="flex items-center gap-1 shrink-0 pt-0.5">
+              <div className="flex items-center gap-1.5 shrink-0 pt-0.5">
                 {project.techStack.map((tech) => (
                   <div
                     key={tech}
                     title={tech}
-                    className="flex size-5 items-center justify-center rounded-md bg-foreground/5 p-0.5 transition-transform hover:scale-110 dark:bg-white/5"
+                    className="flex size-7 items-center justify-center rounded-md border border-border/70 bg-card p-1 shadow-2xs transition-all hover:scale-110 hover:border-foreground/30 dark:border-white/10 dark:bg-white/5"
                   >
-                    <TechIcon name={tech} className="size-3.5" />
+                    <TechIcon name={tech} className="size-4.5" />
                   </div>
                 ))}
               </div>
@@ -133,7 +142,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1.5 rounded-md bg-foreground/5 py-2 text-xs font-medium text-foreground shadow-xs transition-all hover:bg-foreground/10 active:scale-95 dark:bg-white/5 dark:hover:bg-white/10"
+              className="flex items-center justify-center gap-1.5 rounded-lg border border-border/70 bg-card/90 py-2 text-xs font-medium text-foreground shadow-2xs transition-all hover:bg-muted hover:border-foreground/20 active:scale-95 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
             >
               <GitHubIcon className="size-3.5" />
               <span>GitHub</span>
@@ -145,7 +154,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1.5 rounded-md bg-foreground py-2 text-xs font-medium text-background shadow-xs transition-all hover:opacity-90 active:scale-95"
+              className="flex items-center justify-center gap-1.5 rounded-lg bg-foreground py-2 text-xs font-medium text-background shadow-xs transition-all hover:opacity-90 active:scale-95"
             >
               <ExternalLink className="size-3.5" />
               <span>Live Demo</span>

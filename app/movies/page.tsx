@@ -60,7 +60,7 @@ export default function MoviesPage() {
           {media.map((item) => (
             <div
               key={item.title}
-              className="rounded-xl border border-border/50 bg-card p-4 transition-colors hover:bg-muted/40"
+              className="rounded-xl border border-border/80 bg-card p-4 shadow-2xs transition-all hover:bg-muted/60 hover:border-foreground/25 hover:shadow-xs dark:border-border/60 dark:hover:bg-muted/40"
             >
               <div className="flex items-center justify-between text-xs text-muted-foreground font-jetbrains mb-1">
                 <span className="flex items-center gap-1.5">

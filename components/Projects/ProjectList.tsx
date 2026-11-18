@@ -50,7 +50,7 @@ export function ProjectList({ projects }: ProjectListProps) {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search projects by title, tech stack, or topic..."
-            className="h-10 w-full rounded-xl border border-input bg-background/50 pl-9 pr-9 text-sm text-foreground placeholder:text-muted-foreground outline-none transition-all focus:border-ring focus:ring-2 focus:ring-ring/20"
+            className="h-10 w-full rounded-xl border border-border/80 bg-card pl-9 pr-9 text-sm text-foreground placeholder:text-muted-foreground shadow-2xs outline-none transition-all focus:border-ring focus:ring-2 focus:ring-ring/20 dark:border-border/60 dark:bg-background/50"
           />
           {searchQuery && (
             <button
@@ -75,8 +75,8 @@ export function ProjectList({ projects }: ProjectListProps) {
                 onClick={() => setSelectedCategory(cat)}
                 className={`cursor-pointer rounded-md px-3 py-1.5 text-xs font-medium transition-all ${
                   isActive
-                    ? "bg-foreground text-background shadow-xs"
-                    : "border border-border/60 bg-muted/30 text-muted-foreground hover:bg-muted hover:text-foreground"
+                    ? "bg-foreground text-background shadow-xs font-semibold"
+                    : "border border-border/80 bg-card text-muted-foreground hover:bg-muted hover:border-foreground/25 hover:text-foreground shadow-2xs dark:border-border/60 dark:bg-muted/30"
                 }`}
               >
                 {cat}

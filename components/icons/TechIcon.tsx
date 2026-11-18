@@ -7,86 +7,104 @@ type TechIconProps = {
   className?: string
 }
 
-// Map normalized technology names to their PNG icon in /public/tech-icons/
+// Map normalized technology names to their PNG icon in /public/tech-icon-png/
 const TECH_PNG_MAP: Record<string, string> = {
   // Cloud & DevOps
-  aws: "/tech-icons/icons8-aws-48.png",
-  amazon: "/tech-icons/icons8-aws-48.png",
-  amazonwebservices: "/tech-icons/icons8-aws-48.png",
-  docker: "/tech-icons/icons8-docker-24.png",
-  git: "/tech-icons/icons8-git-48.png",
-  github: "/tech-icons/icons8-git-48.png",
-  linux: "/tech-icons/icons8-linux-48.png",
-  postman: "/tech-icons/icons8-postman-inc-24.png",
-  vercel: "/tech-icons/icons8-vercel-50.png",
+  aws: "/tech-icon-png/icons8-aws-48.png",
+  amazon: "/tech-icon-png/icons8-aws-48.png",
+  amazonwebservices: "/tech-icon-png/icons8-aws-48.png",
+  docker: "/tech-icon-png/icons8-docker-24.png",
+  dockerhub: "/tech-icon-png/icons8-docker-24.png",
+  git: "/tech-icon-png/icons8-git-48.png",
+  github: "/tech-icon-png/icons8-git-48.png",
+  linux: "/tech-icon-png/icons8-linux-48.png",
+  ubuntu: "/tech-icon-png/icons8-linux-48.png",
+  postman: "/tech-icon-png/icons8-postman-inc-24.png",
+  postmaninc: "/tech-icon-png/icons8-postman-inc-24.png",
+  vercel: "/tech-icon-png/icons8-vercel-50.png",
 
   // Core Languages
-  typescript: "/tech-icons/icons8-typescript-24.png",
-  ts: "/tech-icons/icons8-typescript-24.png",
-  javascript: "/tech-icons/icons8-javascript-48.png",
-  js: "/tech-icons/icons8-javascript-48.png",
-  python: "/tech-icons/icons8-python-48.png",
-  java: "/tech-icons/icons8-java-48.png",
-  html: "/tech-icons/icons8-html5-24.png",
-  html5: "/tech-icons/icons8-html5-24.png",
-  css: "/tech-icons/icons8-css-24.png",
-  css3: "/tech-icons/icons8-css-24.png",
+  typescript: "/tech-icon-png/icons8-typescript-24.png",
+  ts: "/tech-icon-png/icons8-typescript-24.png",
+  javascript: "/tech-icon-png/icons8-javascript-48.png",
+  js: "/tech-icon-png/icons8-javascript-48.png",
+  python: "/tech-icon-png/icons8-python-48.png",
+  py: "/tech-icon-png/icons8-python-48.png",
+  java: "/tech-icon-png/icons8-java-48.png",
+  html: "/tech-icon-png/icons8-html5-24.png",
+  html5: "/tech-icon-png/icons8-html5-24.png",
+  css: "/tech-icon-png/icons8-css-24.png",
+  css3: "/tech-icon-png/icons8-css-24.png",
 
   // Frontend Frameworks & Styling
-  react: "/tech-icons/icons8-react-24.png",
-  reactjs: "/tech-icons/icons8-react-24.png",
-  next: "/tech-icons/icons8-next.js-48.png",
-  nextjs: "/tech-icons/icons8-next.js-48.png",
-  tailwind: "/tech-icons/icons8-tailwindcss-48.png",
-  tailwindcss: "/tech-icons/icons8-tailwindcss-48.png",
-  figma: "/tech-icons/icons8-figma-48.png",
+  react: "/tech-icon-png/icons8-react-24.png",
+  reactjs: "/tech-icon-png/icons8-react-24.png",
+  next: "/tech-icon-png/icons8-next.js-48.png",
+  nextjs: "/tech-icon-png/icons8-next.js-48.png",
+  tailwind: "/tech-icon-png/icons8-tailwindcss-48.png",
+  tailwindcss: "/tech-icon-png/icons8-tailwindcss-48.png",
+  figma: "/tech-icon-png/icons8-figma-48.png",
 
   // Backend & APIs
-  node: "/tech-icons/icons8-nodejs-48.png",
-  nodejs: "/tech-icons/icons8-nodejs-48.png",
-  express: "/tech-icons/icons8-express-js-50.png",
-  expressjs: "/tech-icons/icons8-express-js-50.png",
+  node: "/tech-icon-png/icons8-nodejs-48.png",
+  nodejs: "/tech-icon-png/icons8-nodejs-48.png",
+  express: "/tech-icon-png/icons8-express-js-50.png",
+  expressjs: "/tech-icon-png/icons8-express-js-50.png",
 
   // Databases & ORMs
-  postgresql: "/tech-icons/icons8-postgresql-24.png",
-  postgres: "/tech-icons/icons8-postgresql-24.png",
-  sql: "/tech-icons/icons8-mysql-24.png",
-  mysql: "/tech-icons/icons8-mysql-24.png",
-  prisma: "/tech-icons/icons8-prisma-orm-50.png",
-  prismaorm: "/tech-icons/icons8-prisma-orm-50.png",
-  mongodb: "/tech-icons/icons8-mongo-db-48.png",
-  mongo: "/tech-icons/icons8-mongo-db-48.png",
-  mongoose: "/tech-icons/icons8-mongoose-48.png",
-  redis: "/tech-icons/icons8-redis-48.png",
-  supabase: "/tech-icons/icons8-supabase-48.png",
+  postgresql: "/tech-icon-png/icons8-postgresql-24.png",
+  postgres: "/tech-icon-png/icons8-postgresql-24.png",
+  sql: "/tech-icon-png/icons8-mysql-24.png",
+  mysql: "/tech-icon-png/icons8-mysql-24.png",
+  prisma: "/tech-icon-png/icons8-prisma-orm-50.png",
+  prismaorm: "/tech-icon-png/icons8-prisma-orm-50.png",
+  mongodb: "/tech-icon-png/icons8-mongo-db-48.png",
+  mongo: "/tech-icon-png/icons8-mongo-db-48.png",
+  mongoose: "/tech-icon-png/icons8-mongoose-48.png",
+  redis: "/tech-icon-png/icons8-redis-48.png",
+  supabase: "/tech-icon-png/icons8-supabase-48.png",
 }
+
+// Dark icons that should invert in dark mode to remain visible
+const INVERT_IN_DARK = new Set([
+  "express",
+  "expressjs",
+  "prisma",
+  "prismaorm",
+  "vercel",
+])
 
 export function TechIcon({ name, className = "size-4" }: TechIconProps) {
   const normalized = name.toLowerCase().replace(/[\s\.\-_/]/g, "")
 
-  // Check if a dedicated PNG exists in public/tech-icons
+  // Check if a dedicated PNG exists in /public/tech-icon-png/
   const pngSrc = TECH_PNG_MAP[normalized]
   if (pngSrc) {
+    const shouldInvert = INVERT_IN_DARK.has(normalized)
     return (
       <Image
         src={pngSrc}
         alt={`${name} icon`}
         width={24}
         height={24}
-        className={cn("inline-block object-contain shrink-0", className)}
+        className={cn(
+          "inline-block object-contain shrink-0",
+          shouldInvert && "dark:invert",
+          className
+        )}
         unoptimized
       />
     )
   }
 
-  // SVG fallbacks for technologies without dedicated PNG files
+  // Fallback SVGs for items without dedicated PNGs (e.g. shadcn, motion, zod)
   switch (normalized) {
     case "shadcnui":
     case "shadcn":
       return (
         <svg
           viewBox="0 0 256 256"
-          className={className}
+          className={cn("inline-block shrink-0", className)}
           fill="none"
           aria-hidden="true"
         >
@@ -117,7 +135,7 @@ export function TechIcon({ name, className = "size-4" }: TechIconProps) {
       return (
         <svg
           viewBox="0 0 24 24"
-          className={className}
+          className={cn("inline-block shrink-0", className)}
           fill="#3E67B1"
           aria-hidden="true"
         >
@@ -130,7 +148,7 @@ export function TechIcon({ name, className = "size-4" }: TechIconProps) {
       return (
         <svg
           viewBox="0 0 24 24"
-          className={className}
+          className={cn("inline-block shrink-0", className)}
           fill="none"
           stroke="#EC5990"
           strokeWidth="2"
@@ -149,7 +167,7 @@ export function TechIcon({ name, className = "size-4" }: TechIconProps) {
       return (
         <svg
           viewBox="0 0 24 24"
-          className={className}
+          className={cn("inline-block shrink-0", className)}
           fill="currentColor"
           aria-hidden="true"
         >
@@ -161,7 +179,7 @@ export function TechIcon({ name, className = "size-4" }: TechIconProps) {
       return (
         <svg
           viewBox="0 0 24 24"
-          className={className}
+          className={cn("inline-block shrink-0", className)}
           fill="none"
           stroke="currentColor"
           strokeWidth="2"

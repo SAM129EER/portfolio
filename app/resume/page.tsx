@@ -71,7 +71,7 @@ export default function ResumePage() {
           <a
             href="/resume.pdf"
             download="Sameer_Jangid_Resume.pdf"
-            className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/80 bg-background/80 px-4 py-2 text-xs font-medium text-foreground transition-all hover:bg-muted active:scale-95 shadow-xs w-fit"
+            className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/80 bg-card px-4 py-2 text-xs font-medium text-foreground transition-all hover:bg-muted hover:border-foreground/20 active:scale-95 shadow-2xs w-fit dark:border-border/70"
           >
             <Download className="size-3.5" />
             <span>Download CV</span>
@@ -121,9 +121,9 @@ export default function ResumePage() {
                   {job.technologies.map((tech) => (
                     <span
                       key={tech.name}
-                      className="inline-flex items-center gap-1 rounded-md border border-border/40 bg-muted/30 px-2 py-0.5 text-[11px] font-medium text-muted-foreground font-jetbrains"
+                      className="inline-flex items-center gap-1.5 rounded-md border border-border/70 bg-card px-2.5 py-1 text-xs font-medium text-foreground/80 font-jetbrains shadow-2xs hover:bg-muted hover:text-foreground transition-colors dark:border-border/40 dark:bg-muted/30"
                     >
-                      <TechIcon name={tech.name} className="size-3" />
+                      <TechIcon name={tech.name} className="size-4 shrink-0" />
                       <span>{tech.name}</span>
                     </span>
                   ))}
@@ -143,7 +143,7 @@ export default function ResumePage() {
             {SKILL_CATEGORIES.map((cat) => (
               <div
                 key={cat.category}
-                className="rounded-xl border border-border/40 bg-muted/20 p-4 space-y-2"
+                className="rounded-xl border border-border/70 bg-card p-4 space-y-2.5 shadow-2xs dark:border-border/50 dark:bg-muted/20"
               >
                 <h3 className="text-xs font-semibold text-foreground font-jetbrains">
                   {cat.category}
@@ -152,9 +152,9 @@ export default function ResumePage() {
                   {cat.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="inline-flex items-center gap-1 rounded-md border border-border/50 bg-background/70 px-2 py-0.5 text-[11px] text-muted-foreground font-medium"
+                      className="inline-flex items-center gap-2 rounded-lg border border-border/70 bg-background px-2.5 py-1 text-xs text-foreground/85 font-medium font-jetbrains shadow-2xs hover:bg-muted hover:border-foreground/20 hover:text-foreground transition-colors dark:border-border/50 dark:bg-card"
                     >
-                      <TechIcon name={skill} className="size-3" />
+                      <TechIcon name={skill} className="size-4.5 shrink-0" />
                       <span>{skill}</span>
                     </span>
                   ))}

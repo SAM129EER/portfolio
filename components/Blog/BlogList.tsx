@@ -60,7 +60,7 @@ export function BlogList({ blogs }: BlogListProps) {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search articles by title, description, or topic..."
-            className="h-10 w-full rounded-xl border border-input bg-background/50 pr-9 pl-9 text-sm text-foreground transition-all outline-none placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
+            className="h-10 w-full rounded-xl border border-border/80 bg-card pr-9 pl-9 text-sm text-foreground shadow-2xs transition-all outline-none placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20 dark:border-border/60 dark:bg-background/50"
           />
           {searchQuery && (
             <button
@@ -75,7 +75,6 @@ export function BlogList({ blogs }: BlogListProps) {
         </div>
 
         {/* Tag Filters */}
-        {/* Tag Filters */}
         <div className="flex flex-wrap items-center gap-1.5 pt-1">
           {visibleTags.map((tag) => {
             const isActive = selectedTag === tag
@@ -85,10 +84,10 @@ export function BlogList({ blogs }: BlogListProps) {
                 key={tag}
                 type="button"
                 onClick={() => setSelectedTag(tag)}
-                className={`rounded-md px-3 py-1.5 text-xs font-medium transition-all ${
+                className={`cursor-pointer rounded-md px-3 py-1.5 text-xs font-medium transition-all ${
                   isActive
-                    ? "bg-foreground text-background shadow-sm"
-                    : "border border-border/60 bg-muted/30 text-muted-foreground hover:bg-muted hover:text-foreground"
+                    ? "bg-foreground text-background shadow-xs font-semibold"
+                    : "border border-border/80 bg-card text-muted-foreground hover:bg-muted hover:border-foreground/25 hover:text-foreground shadow-2xs dark:border-border/60 dark:bg-muted/30"
                 }`}
               >
                 {tag}
@@ -100,7 +99,7 @@ export function BlogList({ blogs }: BlogListProps) {
             <button
               type="button"
               onClick={() => setShowMore((prev) => !prev)}
-              className="rounded-full border border-border/60 bg-muted/30 px-3 py-1 text-xs font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
+              className="cursor-pointer rounded-full border border-border/80 bg-card px-3 py-1 text-xs font-medium text-muted-foreground shadow-2xs hover:bg-muted hover:text-foreground dark:border-border/60 dark:bg-muted/30"
             >
               {showMore ? "Less" : "More"}
             </button>

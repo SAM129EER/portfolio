@@ -26,10 +26,10 @@ export function ExperienceTechnology({
     <motion.div
       initial="initial"
       whileHover="hover"
-      className="relative z-0 flex h-9 w-9 items-center gap-2 overflow-hidden rounded-md border border-dashed px-2 text-foreground transition-colors hover:z-10 hover:w-auto hover:bg-muted"
+      className="relative z-0 flex h-9 w-9 items-center gap-2 overflow-hidden rounded-lg border border-dashed border-border/80 bg-card p-2 text-foreground shadow-2xs transition-all hover:z-10 hover:w-auto hover:bg-muted hover:border-foreground/30 hover:pr-3 hover:shadow-xs dark:border-border/60 dark:bg-muted/20"
     >
       {/* Icon */}
-      <TechIcon name={technology.name} className="size-4 shrink-0" />
+      <TechIcon name={technology.name} className="size-5 shrink-0" />
 
       <motion.span
         variants={textVariants}

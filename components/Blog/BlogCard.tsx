@@ -8,7 +8,7 @@ type BlogCardProps = {
 
 export function BlogCard({ blog }: BlogCardProps) {
   return (
-    <article className="group relative -mx-4 rounded-xl border border-transparent p-4 transition-colors hover:border-border/40 hover:bg-muted/40">
+    <article className="group relative -mx-4 rounded-xl border border-transparent p-4 transition-all hover:border-border/80 hover:bg-muted/60 hover:shadow-2xs dark:hover:border-border/40 dark:hover:bg-muted/40">
       {/* Top Metadata */}
       <div className="mb-2 flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
         <div className="font-jetbrains flex items-center gap-2">
@@ -26,9 +26,9 @@ export function BlogCard({ blog }: BlogCardProps) {
             {blog.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-md border border-border/50 bg-background/50 px-2 py-0.5 text-[11px] font-medium text-muted-foreground"
+                className="rounded-md border border-border/70 bg-card px-2 py-0.5 text-[11px] font-medium text-muted-foreground shadow-2xs dark:border-border/50 dark:bg-muted/30"
               >
-                {tag}
+                #{tag}
               </span>
             ))}
           </div>

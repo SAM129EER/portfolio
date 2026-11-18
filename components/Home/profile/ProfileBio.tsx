@@ -30,10 +30,10 @@ export function ProfileBio() {
         {featuredTech.map((tech) => (
           <span
             key={tech}
-            className="inline-flex items-center gap-1.5 rounded-md border border-dashed border-border/40 bg-muted/30 px-2 py-1.5 text-xs font-medium text-muted-foreground font-jetbrains transition-colors hover:bg-muted hover:text-foreground"
+            className="inline-flex items-center gap-2 rounded-lg border border-border/70 bg-card px-2 py-1 text-xs font-medium text-foreground/85 font-jetbrains shadow-2xs transition-all hover:bg-muted hover:border-foreground/25 hover:text-foreground dark:border-border/50 dark:bg-muted/30 dark:hover:bg-muted/70"
           >
-            <TechIcon name={tech} className="size-3.5" />
-            <span className="font-bold ">{tech}</span>
+            <TechIcon name={tech} className="size-4.5 shrink-0" />
+            <span>{tech}</span>
           </span>
         ))}
       </div>

@@ -45,7 +45,7 @@ export function Navbar() {
   }, [router])
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 py-3 backdrop-blur supports-backdrop-filter:bg-background/60">
+    <header className="sticky top-0 z-50 w-full  border-border/50 bg-background/85 py-3 backdrop-blur supports-backdrop-filter:bg-background/60">
       <Container>
         <nav className="flex items-center justify-between px-4">
           <div className="flex items-center gap-6">
@@ -64,7 +64,7 @@ export function Navbar() {
             <Link
               href="/projects"
               aria-label="Search projects (Ctrl+K)"
-              className="inline-flex h-8 items-center gap-2 rounded-full border border-border bg-background px-2.5 text-xs text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              className="inline-flex h-8 items-center gap-2 rounded-full border border-border/80 bg-card px-2.5 text-xs text-muted-foreground shadow-2xs transition-all hover:bg-muted hover:border-foreground/20 hover:text-foreground dark:border-border/60"
             >
               <Search className="size-3.5" />
               <kbd className="pointer-events-none rounded border border-border/80 bg-muted/60 px-1 py-0.5 text-[10px] font-medium text-muted-foreground">

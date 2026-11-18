@@ -43,12 +43,12 @@ export function ProfileHeader() {
   return (
     <div className="flex items-center gap-4">
       {/* Profile Image with Skeleton Loader */}
-      <div className="relative size-24 shrink-0 overflow-hidden rounded-full border border-border/40 bg-muted shadow-xs">
+      <div className="relative size-24 shrink-0 overflow-hidden rounded-full bg-muted">
         {!avatarLoaded && (
           <Skeleton className="absolute inset-0 size-full rounded-full" />
         )}
         <Image
-          src="/avatar/avatar-1.jpg"
+          src="/avatar/profile.jpg"
           alt="Sameer Jangid profile picture"
           fill
           onLoad={() => setAvatarLoaded(true)}

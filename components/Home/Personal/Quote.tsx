@@ -33,10 +33,10 @@ export function Quote() {
   const quote = quotes[isClient ? quoteIndex : 0]
 
   return (
-    <figure className="relative overflow-hidden rounded-xl border p-6">
+    <figure className="relative overflow-hidden rounded-2xl border border-border/70 bg-card p-6 shadow-xs dark:border-border/50">
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute -top-8 -left-1 font-serif text-[160px] leading-none text-foreground/50 select-none"
+        className="pointer-events-none absolute -top-8 -left-1 select-none font-serif text-[150px] leading-none text-foreground/8 dark:text-foreground/10"
       >
         “
       </span>

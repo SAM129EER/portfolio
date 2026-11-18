@@ -31,8 +31,8 @@ export function ExperienceItem({
             <h3 className="font-semibold">{experience.company}</h3>
 
             {experience.working && (
-              <span className="inline-flex items-center gap-1.5 rounded-md border border-green-600 bg-green-500/10 px-2 py-1 text-xs font-medium text-foreground dark:text-foreground">
-                <span className="size-1.5 rounded-full  bg-green-400 animate-pulse" />
+              <span className="inline-flex items-center gap-1.5 rounded-md border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-xs font-medium text-emerald-700 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-300">
+                <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
                 Working
               </span>
             )}
@@ -46,12 +46,12 @@ export function ExperienceItem({
                   ? `Collapse ${experience.company}`
                   : `Expand ${experience.company}`
               }
-              className="relative flex size-5 items-center justify-center rounded-md bg-muted text-muted-foreground opacity-70 transition-all sm:opacity-0 group-hover/card:opacity-100 hover:bg-muted/80 hover:text-foreground"
+              className="relative flex size-5 cursor-pointer items-center justify-center rounded-md border border-border/70 bg-card text-muted-foreground shadow-2xs transition-all hover:bg-muted hover:text-foreground hover:border-foreground/20 dark:border-border/60"
             >
               <ChevronDown
                 className={cn(
-                  "size-4 transition-transform duration-200",
-                  open && "rotate-180"
+                  "size-3.5 transition-transform duration-200",
+                  open && "rotate-180 text-foreground"
                 )}
               />
             </button>
